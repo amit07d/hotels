@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 // MongoDB connection
-const mongoUrl = 'mongodb://localhost:27017/people'; // Removed deprecated options
+//const mongoUrl = process.env.MONGODB_URL_LOCAL // Removed deprecated options
+
+const mongoUrl = process.env.MONGODB_URL
 mongoose.connect(mongoUrl); 
 const db = mongoose.connection;
 
